@@ -20,7 +20,7 @@ The proposed methodology aims to extract textual attributes from both product im
 ## Example
 
 Let's consider an example to illustrate the input and output formats:
-
+```python
 **Input**:
 Product Text: "This shirt is a red Nike T-shirt available in size medium."
 
@@ -38,7 +38,7 @@ Entity Spans: ["red Nike T-shirt", "medium"]
 Entity Labels: ["COLOR", "SIZE"]
 
 Entity Values: ["red Nike T-shirt", "medium"]
-
+```
 In this example, the model correctly predicts that "red Nike T-shirt" is the color of the product ("COLOR" entity label) and "medium" is the size of the product ("SIZE" entity label).
 
 ## Additional Approaches and Improvements
