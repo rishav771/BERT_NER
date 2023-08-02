@@ -16,6 +16,31 @@ The proposed methodology aims to extract textual attributes from both product im
 
 4. **Cross-Validation of Results**: The extracted attributes from product titles and images are cross-validated to disambiguate multiple possible attribute values. The visual information from product images helps in identifying the correct attribute value when there are multiple possibilities mentioned in the product title.
 
+
+## Example
+
+Let's consider an example to illustrate the input and output formats:
+
+**Input**:
+Product Text: "This shirt is a red Nike T-shirt available in size medium."
+
+**Tokenized Input**:
+["This", "shirt", "is", "a", "red", "Nike", "T", "-", "shirt", "available", "in", "size", "medium", "."]
+
+**Attention Mask**:
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+
+**Output**:
+Token-level Predictions: [O, O, O, O, COLOR, BRAND, BRAND, BRAND, BRAND, O, O, SIZE, SIZE, O]
+
+Entity Spans: ["red Nike T-shirt", "medium"]
+
+Entity Labels: ["COLOR", "SIZE"]
+
+Entity Values: ["red Nike T-shirt", "medium"]
+
+In this example, the model correctly predicts that "red Nike T-shirt" is the color of the product ("COLOR" entity label) and "medium" is the size of the product ("SIZE" entity label).
+
 ## Additional Approaches and Improvements
 
 On top of the proposed methodology, two additional approaches were explored:
